@@ -30,25 +30,26 @@ public class Login extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void DoLogin(View view) {
-        //Intent i = new Intent(Login.this, MainActivity.class);
         //Convertimos las variables de login en strings para poder compararlas
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
+        //Comprobamos si el email escrito es admin
         if (email.equals("admin")){
-            //El login es correcto
+            //Verificamos que el password escrito es 1234. Si pasa el if, el login es correcto
             if (password.equals("1234")) {
                 Toast.makeText(this, "Login Correcto", Toast.LENGTH_SHORT).show();
                 //Iniciamos el intent que lanzará el MainActivity
                 intentMainActivity = new Intent(this, MainActivity.class);
                 //Con el metodo startActivity lo ejecutaremos
                 startActivity(intentMainActivity);
-
             }
+            //Si entramos aquí es porque el password es incorrecto
             else{
                 Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
             }
         }
+        //Si entramos aquí es porque el email es incorrecto
         else{
             Toast.makeText(this, "Email incorrecto", Toast.LENGTH_SHORT).show();
         }
