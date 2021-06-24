@@ -16,6 +16,8 @@ public class Login extends AppCompatActivity {
     //Declaramos las variables donde introduciremos el email y el password
     EditText emailEditText;
     EditText passwordEditText;
+    //Declaramos el intent que nos permitirá lanzar la pantalla principal si el login es correcto
+    Intent intentMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,11 @@ public class Login extends AppCompatActivity {
             //El login es correcto
             if (password.equals("1234")) {
                 Toast.makeText(this, "Login Correcto", Toast.LENGTH_SHORT).show();
+                //Iniciamos el intent que lanzará el MainActivity
+                intentMainActivity = new Intent(this, MainActivity.class);
+                //Con el metodo startActivity lo ejecutaremos
+                startActivity(intentMainActivity);
+
             }
             else{
                 Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
