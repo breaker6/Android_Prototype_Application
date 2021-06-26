@@ -22,4 +22,11 @@ public class MainActivity extends AppCompatActivity {
         //Con el metodo startActivity lo ejecutaremos
         startActivity(activityElegido);
     }
+
+    public void MapsLauncher(View view) {
+        //Iniciamos el intent que lanzará el MapsActivity
+        activityElegido = new Intent(this, MapsActivity.class);
+        //Con el metodo startActivity lo ejecutaremos
+        startActivity(activityElegido);
+    }
 }
